@@ -36,7 +36,7 @@ function writePage(people, name) {
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="UTF-8">
-    <link href="../dist/${name}-style.css" rel="stylesheet">
+    <link href="./${name}-style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -52,7 +52,7 @@ function writePage(people, name) {
         page += createCard(person);
     });
     page += bot;
-    fs.writeFile(`../dist/${name}.html`, bot, 'utf-8');
+    fs.writeFileSync(`./dist/${name}.html`, page);
 }
 
-module.exports = createCard, writePage;
+module.exports = {createCard, writePage};

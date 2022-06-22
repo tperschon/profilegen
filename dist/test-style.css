@@ -1,8 +1,4 @@
-const fs = require('fs');
-
-function writeStylesheet(name) {
-    fs.writeFileSync(`./dist/${name}-style.css` ,
-`:root {
+:root {
     --red: rgb(232, 71, 86);
     --white: rgb(241, 255, 255);
     --blue: rgb(0, 119, 247);
@@ -86,6 +82,4 @@ body {
     .card {
         width: 20%;
     }
-}`)}
-
-module.exports = writeStylesheet;
+}
