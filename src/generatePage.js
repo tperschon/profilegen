@@ -27,13 +27,13 @@ function createCard(person) {
 </div>`;
 }
 
-function getPage(people, name) {
+function getPage(people) {
 // top of html before inserted employee cards
     let page = `<!DOCTYPE html>
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="UTF-8">
-    <link href="./style.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
