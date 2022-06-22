@@ -1,4 +1,4 @@
-function getStylesheet(name) {
+function generateStylesheet(name) {
     return (`./dist/${name}-style.css` ,
 `:root {
     --red: rgb(232, 71, 86);
@@ -86,4 +86,4 @@ body {
     }
 }`)}
 
-module.exports = getStylesheet;
+module.exports = generateStylesheet;

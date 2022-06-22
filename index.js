@@ -101,8 +101,8 @@ function addEmployee(project) {
         }
         else {
             fs.mkdirSync(`./dist/${project}`);
-            generateStylesheet(project);
-            generatePage.writePage(employees, project);
+            fs.writeFileSync(`./dist/${project}/style.css`, generateStylesheet(project));
+            fs.writeFileSync(`./dist/${project}/index.html`, generatePage.getPage(employees, project));
         }
     })
 }
