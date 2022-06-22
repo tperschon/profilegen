@@ -29,8 +29,8 @@ const employeeQuestions = [
     },
 ];
 
+// ask what kind of employee and then ask generic questions about the employee
 function addAnEmployee() {
-    // ask what kind of employee and then ask generic questions about the employee
     inquirer.prompt([
         {
             type: 'list',
@@ -39,25 +39,28 @@ function addAnEmployee() {
             choices: ['Engineer', 'Intern']
         },
         ...employeeQuestions]
-    ).then(res => {
-        // retrieve given answers and store them in variables
-        let { name, id, email } = res;
+    )
+    // with our answers
+    .then(res => {
         // switch statement to decide what to do depending on employee type
         switch (res.type) {
+            // if it's an engineer, call function to add engineer, feeding in generic data we've gathered so far
             case 'Engineer': {
-                addEngineer(name, id, email);
+                addEngineer(res.name, res.id, res.email);
                 break;
             }
+            // if it's an intern, call function to add intern, feeding in generic data we've gathered so far
             case 'Intern': {
-                addIntern(name, id, email);
+                addIntern(res.name, res.id, res.email);
                 break;
             }
-        }
-    })
-}
+        };
+    });
+};
 
+// with given info, ask for one more bit of information, then push a new Engineer to our employees array
 function addEngineer(name, id, email) {
-    // engineer selected, ask for their github
+    // ask for their github
     inquirer.prompt([
         {
             type: 'input',
@@ -67,11 +70,12 @@ function addEngineer(name, id, email) {
     ])
     // after we get their github 
     .then(res => {
-        //push a new Engineer to the employees array and start the function over, passing project back in so we preserve its value
+        // push a new Engineer to the employees array
         employees.push(new Engineer(name, id, email, res.github));
+        // we're at the end of the chain, start it over
         addEmployees();
-    })
-}
+    });
+};
 
 function addIntern(name, id, email) {
     // intern selected, ask for their school
@@ -86,9 +90,10 @@ function addIntern(name, id, email) {
     .then(res => {
         // push a new Intern to the employees array start the function over, passing project back in to preserve its value
         employees.push(new Intern(name, id, email, res.school));
+        // we're at the end of the chain, start it over
         addEmployees();
-    })
-}
+    });
+};
 
 // recursively adds employees to the employees array using inquirer prompts
 function addEmployees() {
@@ -104,8 +109,8 @@ function addEmployees() {
         .then(res => {
             // if the user wants to add an employee, do so, otherwise create files
             res.continue ? addAnEmployee() : createFiles(employees, project);
-        })
-}
+        });
+};
 
 // take in an array of employees and the project name, create files and folders structure
 function createFiles(empArray, projName) {
@@ -142,7 +147,7 @@ function start() {
             employees.push(new Manager(res.name, res.id, res.email, res.office));
             addEmployees();
         }
-        );
-}
+    );
+};
 
 start();
