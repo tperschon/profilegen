@@ -1,6 +1,6 @@
 // import dependencies
 const { Manager, Engineer, Intern } = require('./lib/employees.js');
-const generatePage = require('./src/generatePage');
+const getPage = require('./src/getPage');
 const generateStylesheet = require('./src/generateStylesheet');
 const inquirer = require('inquirer');
 const fs = require('fs');
@@ -123,7 +123,7 @@ function addEmployee(project) {
                 // if the user answers no, we create the full path we need and write the files
                 fs.mkdirSync(`./dist/${project}/assets/css/`, { recursive: true })
                 fs.writeFileSync(`./dist/${project}/assets/css/style.css`, generateStylesheet(project));
-                fs.writeFileSync(`./dist/${project}/index.html`, generatePage.getPage(employees, project));
+                fs.writeFileSync(`./dist/${project}/index.html`, getPage(employees, project));
             }
         })
 }

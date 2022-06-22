@@ -1,6 +1,6 @@
-function generateStylesheet(name) {
-    return (`./dist/${name}-style.css` ,
-`:root {
+// return the contents of a full css file as a string
+function generateStylesheet() {
+    return (`:root {
     --red: rgb(232, 71, 86);
     --white: rgb(241, 255, 255);
     --blue: rgb(0, 119, 247);
