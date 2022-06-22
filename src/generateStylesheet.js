@@ -13,7 +13,6 @@ function writeStylesheet(name, path) {
 * {
     margin: 0;
     padding: 0;
-    font-size: 60%;
 }
 
 body {
@@ -22,7 +21,7 @@ body {
 }
 
 .heading {
-    font-size: 15rem;
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 30px 0;
     text-align: center;
@@ -51,7 +50,7 @@ body {
 }
 
 .card-attributes {
-    font-size: 12rem;
+    font-size: 12px;
     padding: 5%;
     background-color: var(--white);
 }
@@ -63,20 +62,13 @@ body {
 
 .person {
     white-space: nowrap;
-    font-size: 16rem;
+    font-size: 16px;
     padding: 5%;
     background-color: var(--blue);
     color: var(--white);
 }
 
-i {
-    font-size: 100%;
-}
-
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
-    * {
-        font-size: 45%;
-    }
     .container {
         flex-direction: row;
         justify-content: center;
@@ -87,15 +79,12 @@ i {
 }
 
 @media only screen and (min-width: 1200px) {
-    * {
-        font-size: 25%;
-    }
     .container {
         flex-direction: row;
         justify-content: center;
     }
     .card {
-        width: 10%;
+        width: 20%;
     }
 }`, 'utf-8')}
 
