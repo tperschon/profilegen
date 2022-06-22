@@ -8,7 +8,7 @@ describe('Employee', () => {
             expect(employee).toEqual(
                 {
                     name:undefined,
-                    id:NaN,
+                    id:undefined,
                     email:undefined,
                     position:'Unassigned',
                 }
@@ -21,7 +21,7 @@ describe('Employee', () => {
             expect(manager).toEqual(
                 {
                     name:'name',
-                    id:1234,
+                    id:'1234',
                     email:'email@example.com',
                     position:'Manager',
                 }

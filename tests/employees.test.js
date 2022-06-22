@@ -8,7 +8,7 @@ describe('Manager', () => {
             expect(manager).toEqual(
                 {
                     name:undefined,
-                    id:NaN,
+                    id:undefined,
                     email:undefined,
                     position:'Manager',
                     icon:'<i class="fa-solid fa-mug-hot"></i>',
@@ -48,7 +48,7 @@ describe('Engineer', () => {
             expect(engineer).toEqual(
                 {
                     name:undefined,
-                    id:NaN,
+                    id:undefined,
                     email:undefined,
                     position:'Engineer',
                     icon:'<i class="fa-solid fa-glasses"></i>',
@@ -88,7 +88,7 @@ describe('Intern', () => {
             expect(intern).toEqual(
                 {
                     name:undefined,
-                    id:NaN,
+                    id:undefined,
                     email:undefined,
                     position:'Intern',
                     icon:'<i class="fa-solid fa-user-graduate"></i>',

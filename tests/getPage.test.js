@@ -8,9 +8,9 @@ describe('getPage', () => {
         expect(typeof page).toEqual('string');
     });
 
-    it('length of string should be greater than 392', () => {
-        const page = getPage([]);
+    it('when given at least one valid object, length of string should be greater than 393', () => {
+        const page = getPage([new Manager()]);
 
-        expect(page.length).toBeGreaterThan(392);
+        expect(page.length).toBeGreaterThan(393);
     });
 });
