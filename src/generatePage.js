@@ -49,7 +49,6 @@ function writePage(people, path, name) {
     <div class="container">`;
 // bottom of html after inserted employee cards
     const bot = `    </div>
-
 <script src="https://kit.fontawesome.com/d208147805.js" crossorigin="anonymous"></script>
 </body>`;
     people.forEach(person => {
