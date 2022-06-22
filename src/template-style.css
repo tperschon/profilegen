@@ -53,6 +53,7 @@ body {
 }
 
 .card-attributes p {
+    padding: 5%;
     border: 1px solid rgb(190, 190, 190);
 }
 
@@ -62,6 +63,10 @@ body {
     padding: 5%;
     background-color: var(--blue);
     color: var(--white);
+}
+
+i {
+    font-size: 100%;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
