@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 function createCard(person) {
     switch(person.position) {
         case 'Manager': {
@@ -30,7 +28,7 @@ function createCard(person) {
     return card;
 }
 
-function writePage(people, name) {
+function getPage(people, name) {
 // top of html before inserted employee cards
     let page = `<!DOCTYPE html>
 <head>
@@ -52,7 +50,7 @@ function writePage(people, name) {
         page += createCard(person);
     });
     page += bot;
-    fs.writeFileSync(`./dist/${name}.html`, page);
+    return page;
 }
 
-module.exports = {createCard, writePage};
+module.exports = {createCard, getPage};
