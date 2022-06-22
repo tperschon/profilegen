@@ -1,16 +1,10 @@
 const getPage = require('../src/getPage');
+const { Manager, Engineer, Intern } = require('../lib/employees');
 
 describe('getPage', () => {
-    
-})
+    it('given an array of employees, it should return a string', () => {
+        const page = getPage([new Manager(), new Engineer(), new Intern()]);
 
-
-
-// describe("DayCare", () => {
-//     describe("Initialization", () => {
-//       it("should create an object with 'children' array, 'capacity' number, and 'ageLimit' number", () => {
-//         const dayCare = new DayCare();
-  
-//         expect(dayCare).toEqual({ children: [], capacity: 3, ageLimit: 6 });
-//       });
-//     });
+        expect(typeof page === 'string');
+    });
+});
