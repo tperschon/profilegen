@@ -1,7 +1,4 @@
-const { create } = require('domain');
 const fs = require('fs');
-
-
 
 function createCard(person) {
     switch(person.position) {
