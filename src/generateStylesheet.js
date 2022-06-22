@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-function writeStylesheet(name, path) {
-    fs.writeFile(`${path}/${name}-style.css` ,
+function writeStylesheet(name) {
+    fs.writeFile(`../dist/${name}-style.css` ,
 `:root {
     --red: rgb(232, 71, 86);
     --white: rgb(241, 255, 255);

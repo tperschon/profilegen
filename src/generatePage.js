@@ -30,13 +30,13 @@ function createCard(person) {
     return card;
 }
 
-function writePage(people, path, name) {
+function writePage(people, name) {
 // top of html before inserted employee cards
     let page = `<!DOCTYPE html>
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="UTF-8">
-    <link href="./template-style.css" rel="stylesheet">
+    <link href="../dist/${name}-style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -52,7 +52,7 @@ function writePage(people, path, name) {
         page += createCard(person);
     });
     page += bot;
-    fs.writeFile(`${path}/${name}.html`, bot, 'utf-8');
+    fs.writeFile(`../dist/${name}.html`, bot, 'utf-8');
 }
 
 module.exports = createCard, writePage;
