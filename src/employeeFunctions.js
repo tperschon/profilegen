@@ -46,7 +46,7 @@ function createProjectTeam() {
                 type: 'input',
                 message: 'Enter their office:',
                 name: 'office'
-            }
+            },
         ])
         // after getting manager's info, push them to the employees array as a new Manager object and then start the cycle of addEmployee
         .then(res => {
@@ -66,7 +66,7 @@ function addEmployees() {
                 type: 'confirm',
                 message: 'Would you like to add any more employees?',
                 name: 'continue'
-            }
+            },
         ])
         // if the user wants to add an employee, do so, otherwise create the files
         .then(res => res.continue ? addAnEmployee() : createFiles(employees, project));
@@ -82,12 +82,13 @@ async function addAnEmployee() {
             choices: ['Engineer', 'Intern']
         },
         ...employeeQuestions]
-    )
-    // with our answers
+    );
+    // with our answers, pick the employee type to add, then start the cycle over
     await pickEmployee(inq);
     addEmployees();
 };
 
+// prompt user to pick what kind of employee, then run another function with that info and prior info
 async function pickEmployee(employee) {
     switch(employee.type) {
         // if it's an engineer, call function to add engineer, feeding in generic data we've gathered so far
@@ -100,8 +101,8 @@ async function pickEmployee(employee) {
             await addIntern(employee.name, employee.id, employee.email);
             break;
         }
-    }
-}
+    };
+};
 
 // with given info, ask for engineer-specific information, then push a new Engineer to our employees array
 async function addEngineer(name, id, email) {
@@ -111,8 +112,8 @@ async function addEngineer(name, id, email) {
             type: 'input',
             message: 'What is their GitHub?',
             name: 'github'
-        }
-    ])
+        },
+    ]);
     employees.push(new Engineer(name, id, email, inq.github));
 };
 
@@ -124,8 +125,8 @@ async function addIntern(name, id, email) {
             type: 'input',
             message: 'What school did they attend?',
             name: 'school'
-        }
-    ])
+        },
+    ]);
     // push a new Intern to the employees array
     employees.push(new Intern(name, id, email, inq.school));
 };
