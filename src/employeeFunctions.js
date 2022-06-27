@@ -131,4 +131,13 @@ async function addIntern(name, id, email) {
     employees.push(new Intern(name, id, email, inq.school));
 };
 
-module.exports = createProjectTeam;
+module.exports = {
+    createProjectTeam,
+    addIntern,
+    addEngineer,
+    pickEmployee,
+    addAnEmployee,
+    addEmployees,
+    employeeQuestions,
+    employees
+};

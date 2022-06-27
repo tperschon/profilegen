@@ -1,4 +1,4 @@
 // import working file
-const createProjectTeam = require('./src/employeeFunctions');
+const { createProjectTeam: start } = require('./src/employeeFunctions');
 
-createProjectTeam();
+start();
