@@ -1,10 +1,14 @@
 const { Manager, Engineer, Intern } = require('../lib/employees');
 
+// Manager tests
 describe('Manager', () => {
+    // initalization tests
     describe('Initialization', () => {
+        // zero parameter test
         it("should create a new manager object with 'name', 'id', 'email', 'position', 'icon' and 'office' properties", () => {
+            // declare a new Manager object
             const manager = new Manager();
-
+            // test the object has the expected key-value pairs
             expect(manager).toEqual(
                 {
                     name:undefined,
@@ -16,10 +20,11 @@ describe('Manager', () => {
                 }
             );
         });
-        
+        // test with parameters given
         it("properties should be defined based upon input", () => {
+            // declare a new Manager object
             const manager = new Manager('name', 1234, 'email@example.com', 'office');
-            
+            // test the object has the expected key-value pairs
             expect(manager).toEqual(
                 {
                     name:'name',
@@ -31,20 +36,24 @@ describe('Manager', () => {
                 }
             );
         });
-        
+        // test that the object is a Manager object
         it("created object should be an instance of Manager", () => {
+            // declare a new Manager object
             const manager = new Manager();
-            
+            // test that the new Manager object is an instance of Manager
             expect(manager instanceof Manager)
         });
     });
 });
-
+// Engineer tests
 describe('Engineer', () => {
+    // initalization tests
     describe('Initialization', () => {
+        // zero parameter test
         it("should create a new engineer object with 'name', 'id', 'email', 'position', 'icon' and 'github' properties", () => {
+            // declare a new Engineer object
             const engineer = new Engineer();
-
+            // test the object has the expected key-value pairs
             expect(engineer).toEqual(
                 {
                     name:undefined,
@@ -56,10 +65,11 @@ describe('Engineer', () => {
                 }
             );
         });
-        
+        // test with parameters given
         it("properties should be defined based upon input", () => {
+            // declare a new Engineer object
             const engineer = new Engineer('name', 1234, 'email@example.com', 'github');
-
+            // test the object has the expected key-value pairs
             expect(engineer).toEqual(
                 {
                     name:'name',
@@ -71,20 +81,24 @@ describe('Engineer', () => {
                 }
             );
         });
-        
+        // test that the object is a Engineer object
         it("created object should be an instance of Engineer", () => {
+            // declare a new Engineer object
             const engineer = new Engineer();
-
+            // test that the new Engineer object is an instance of Engineer
             expect(engineer instanceof Engineer);
         });
     });
 });
-
+// Intern tests
 describe('Intern', () => {
+    // initalization tests
     describe('Initialization', () => {
+        // zero parameter test
         it("should create a new intern object with 'name', 'id', 'email', 'position', 'icon' and 'school' properties", () => {
+            // declare a new Intern object
             const intern = new Intern();
-
+            // test the object has the expected key-value pairs
             expect(intern).toEqual(
                 {
                     name:undefined,
@@ -96,10 +110,11 @@ describe('Intern', () => {
                 }
             );
         });
-        
+        // test with parameters given
         it("properties should be defined based upon input", () => {
+            // declare a new Intern object
             const intern = new Intern('name', 1234, 'email@example.com', 'school');
-
+            // test the object has the expected key-value pairs
             expect(intern).toEqual(
                 {
                     name:'name',
@@ -111,10 +126,11 @@ describe('Intern', () => {
                 }
             );
         });
-        
-        it("created object should be an instance of Engineer", () => {
+        // test that the object is a Intern object
+        it("created object should be an instance of Intern", () => {
+            // declare a new Intern object
             const intern = new Intern();
-
+            // test that the new Intern object is an instance of Intern
             expect(intern instanceof Intern);
         });
     });
